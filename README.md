@@ -1,2 +1,3 @@
-# roll20-the-end-times
-Roll20 "The End Times" Character Sheet
+# The End Times Roll20 Character Sheet
+
+Custom character sheet for "The End Times" for Roll20. A constant work in progress.
