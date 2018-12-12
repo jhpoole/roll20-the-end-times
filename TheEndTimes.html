@@ -178,15 +178,15 @@ on("change:repeating_Wounds:Damage_Taken remove:repeating_Wounds", function() {
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <strong>SKILLS</strong><br/>
     <br/>
-<strong style="display:inline-block;  width:90px;">History</strong><input type="number" name="attr_History"  value="0" min="0" max="10" class="sheet-input-skill"><br/>
-<strong style="display:inline-block;  width:90px;">Horsemanship</strong><input type="number" name="attr_Horsemanship"  value="0" min="0" max="10" class="sheet-input-skill"><br/>
-<strong style="display:inline-block;  width:90px;">Hunting</strong><input type="number" name="attr_Hunting"  value="0" min="0" max="10" class="sheet-input-skill"><br/>
-<strong style="display:inline-block;  width:90px;">Intrigue</strong><input type="number" name="attr_Intrigue"  value="0" min="0" max="10" class="sheet-input-skill"><br/>
-<strong style="display:inline-block;  width:90px;">Language</strong><input type="number" name="attr_Language"  value="1" min="1" max="10" class="sheet-input-skill"><br/>
-<strong style="display:inline-block;  width:90px;">Orate</strong><input type="number" name="attr_Orate"  value="0" min="0" max="10" class="sheet-input-skill"><br/>
-<strong style="display:inline-block;  width:90px;">Persuasion</strong><input type="number" name="attr_Persuasion"  value="0" min="0" max="10" class="sheet-input-skill"><br/>
-<strong style="display:inline-block;  width:90px;">Romance</strong><input type="number" name="attr_Romance"  value="0" min="0" max="10" class="sheet-input-skill"><br/>
-<strong style="display:inline-block;  width:90px;">Skirmish</strong><input type="number" name="attr_Skirmish"  value="0" min="0" max="10" class="sheet-input-skill"><br/>
+<strong style="display:inline-block;  width:90px;">History</strong><input type="number" name="attr_History"  value="0" min="0" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls History [[1d20 + @{Intelligence} + @{History}]]' name='roll_HistoryCheck' title="d20 + Intelligence + History"></button><br/>
+<strong style="display:inline-block;  width:90px;">Horsemanship</strong><input type="number" name="attr_Horsemanship"  value="0" min="0" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls Horsemanship [[1d20 + @{Coordination} + @{Horsemanship}]]' name='roll_HorsemanshipCheck' title="d20 + Coordination + Horsemanship"></button><br/>
+<strong style="display:inline-block;  width:90px;">Hunting</strong><input type="number" name="attr_Hunting"  value="0" min="0" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls Hunting [[1d20 + @{Intelligence} + @{Hunting}]]' name='roll_HuntingCheck' title="d20 + Intelligence + Hunting"></button><br/>
+<strong style="display:inline-block;  width:90px;">Intrigue</strong><input type="number" name="attr_Intrigue"  value="0" min="0" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls Intrigue [[1d20 + @{Charisma} + @{Intrigue}]]' name='roll_IntrigueCheck' title="d20 + Charisma + Intrigue"></button><br/>
+<strong style="display:inline-block;  width:90px;">Language</strong><input type="number" name="attr_Language"  value="1" min="1" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls Language [[1d20 + @{Intelligence} + @{Language}]]' name='roll_LanguageCheck' title="d20 + Intelligence + Language"></button><br/>
+<strong style="display:inline-block;  width:90px;">Orate</strong><input type="number" name="attr_Orate"  value="0" min="0" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls Orate [[1d20 + @{Charisma} + @{Orate}]]' name='roll_IntrigueCheck' title="d20 + Charisma + Orate"></button><br/>
+<strong style="display:inline-block;  width:90px;">Persuasion</strong><input type="number" name="attr_Persuasion"  value="0" min="0" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls Persuasion [[1d20 + @{Charisma} + @{Persuasion}]]' name='roll_PersuasionCheck' title="d20 + Charisma + Persuasion"></button><br/>
+<strong style="display:inline-block;  width:90px;">Romance</strong><input type="number" name="attr_Romance"  value="0" min="0" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls Romance [[1d20 + @{Charisma} + @{Romance}]]' name='roll_RomanceCheck' title="d20 + Charisma + Romance"></button><br/>
+<strong style="display:inline-block;  width:90px;">Skirmish</strong><input type="number" name="attr_Skirmish"  value="0" min="0" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls Skirmish [[1d20 + @{Coordination} + @{Skirmish}]]' name='roll_SkirmishCheck' title="d20 + Coordination + Skirmish"></button><br/>
 </div>
 <div class='col'>
     <br/>
