@@ -142,49 +142,37 @@ on("change:repeating_Wounds:Damage_Taken remove:repeating_Wounds", function() {
 </div>
 </div>
 <hr/>
-<div class='3colrow'>
+
+<div class='2colrow'>
+<div class='col'>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>TRAITS</strong><br/><br/>
+    <fieldset class="repeating_Trait">
+        <strong style="display:inline-block;  width:90px;">Trait</strong><input type='text' name='attr_Trait_Name'/><br/>
+        <!--<strong style="display:inline-block;  width:90px;">Effect:</strong><input type='text' name='attr_Trait_Effect'/><br/><br/> -->
+    </fieldset>     
+</div>
 
 <div class='col'>
-    <br/><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>CHECKS</strong>
+     <br/><br/>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <strong>Mod</strong><br/>
 <strong style="display:inline-block;  width:90px;">Physical</strong><input type='number' name='attr_PhysicalCheckMod' value='0'/><button type='roll' value='@{First_Name} rolls a Physical Check [[1d20 + @{Body} + @{PhysicalCheckMod}]]' name='roll_PhysicalCheck' title="d20 + Body + Modifier"></button><br/>
-</div>
 
-<div class='col'>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <strong>CHECKS</strong><br/><br/>
+
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <strong>Mod</strong><br/>
 <strong style="display:inline-block;  width:90px;">Mental</strong><input type='number' name='attr_MentalCheckMod' value='0'/><button type='roll' value='@{First_Name} rolls a Mental Check [[1d20 + @{Willpower} + @{MentalCheckMod}]]' name='roll_MentalCheck' title="d20 + Willpower + Modifier"></button><br/>
-</div>
-<div class='col'>
-    <br/><br/>
+
+
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <strong>Mod</strong><br/>
 <strong style="display:inline-block;  width:90px;">Luck</strong><input type='number' name='attr_LuckCheckMod' value='0'/><button type='roll' value='@{First_Name} rolls a Luck Check [[1d20 + @{LuckCheckMod}]]' name='roll_LuckCheck' title="d20 + Modifier"></button><br/>
-</div>
-</div>
-<hr/>
-<div class='2colrow'>
-<div class='col'>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <strong>POSITIVE TRAITS</strong><br/><br/>
-    <fieldset class="repeating_PositiveTrait">
-        <strong style="display:inline-block;  width:90px;">Trait:</strong><input type='text' name='attr_Positive_Trait_Name'/><br/>
-        <!--<strong style="display:inline-block;  width:90px;">Effect:</strong><input type='text' name='attr_Positive_Trait_Effect'/><br/><br/> -->
-    </fieldset>     
-</div>
-<div class='col'>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <strong>NEGATIVE TRAITS</strong><br/><br/>
-    <fieldset class="repeating_NegativeTrait">
-        <strong style="display:inline-block;  width:90px;">Trait:</strong><input type='text' name='attr_Negative_Trait_Name'/><br/>
-        <!--<strong style="display:inline-block;  width:90px;">Effect:</strong><input type='text' name='attr_Negative_Trait_Effect'/><br/><br/>-->
-    </fieldset> 
-</div>
-</div>
 
+</div>
+</div>
 <hr/>
 
 <div class='3colrow'>
@@ -224,10 +212,26 @@ on("change:repeating_Wounds:Damage_Taken remove:repeating_Wounds", function() {
 <strong style="display:inline-block;  width:90px;">Surgery</strong><input type="number" name="attr_Surgery"  value="0" min="0" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls Surgery [[1d20 + @{Intelligence} + @{Surgery}]]' name='roll_SurgeryCheck' title="d20 + Intelligence + Surgery"></button><br/>
 <strong style="display:inline-block;  width:90px;">Tactics</strong><input type="number" name="attr_Tactics"  value="0" min="0" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls Tactics [[1d20 + @{Intelligence} + @{Tactics}]]' name='roll_TacticsCheck' title="d20 + Intelligence + Tactics"></button><br/>
 <strong style="display:inline-block;  width:90px;">Unarmed</strong><input type="number" name="attr_Unarmed"  value="0" min="0" max="10" class="sheet-input-skill"><button type='roll' value='@{First_Name} rolls Unarmed [[1d20 + @{Coordination} + @{Unarmed}]]' name='roll_UnarmedCheck' title="d20 + Coordination + Unarmed"></button><br/>
-<strong style="display:inline-block;  width:90px;">Skill Total:</strong><input type="number" name="attr_Skill_Total" value="@{Archery}+@{Athletics}+@{Awareness}+@{Boating}+@{Cleaving}+@{Crossbows}+@{First_Aid}+@{Folklore}+@{Horsemanship}+@{Hunting}+@{Intrigue}+@{Language}+@{Orate}+@{Persuasion}+@{Intimidate}+@{Skirmish}+@{Spear}+@{Stewardship}+@{Survival}+@{Sword}+@{Surgery}+@{Tactics}+@{Unarmed}" class="sheet-input-skill" disabled><br/>
+<strong style="display:inline-block;  width:90px;">Skill Total:</strong><input type="number" name="attr_Skill_Total" value="@{Archery}+@{Athletics}+@{Awareness}+@{Cleaving}+@{Crossbows}+@{First_Aid}+@{Folklore}+@{Horsemanship}+@{Hunting}+@{Intrigue}+@{Knowledge}+@{Labour}+@{Language}+@{Orate}+@{Persuasion}+@{Intimidate}+@{Skirmish}+@{Spear}+@{Stewardship}+@{Survival}+@{Sword}+@{Surgery}+@{Tactics}+@{Unarmed}" class="sheet-input-skill" disabled><br/>
 </div>
 </div>
-
+<br/>
+<div class='2colrow'>
+    <div class='col'>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>LABOUR EXPERTISE</strong><br/>
+<fieldset class="repeating_LabourExpertise">
+    <strong style="display:inline-block;  width:70px;">Expertise</strong><input type='text' name='attr_LabourExpertiseName' value=""><button type='roll' value='@{First_Name} rolls Labour Expertise @{LabourExpertiseName} [[1d20 + @{Intelligence} + @{Labour} + 2]]' name='roll_LabourExpertiseCheck'></button><br/>
+</fieldset>
+    </div>
+    <div class='col'>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>KNOWLEDGE EXPERTISE</strong><br/>
+<fieldset class="repeating_KnowledgeExpertise">
+    <strong style="display:inline-block;  width:70px;">Expertise</strong><input type='text' name='attr_KnowledgeExpertiseName' value=""><button type='roll' value='@{First_Name} rolls Knowledge Expertise @{KnowledgeExpertiseName} [[1d20 + @{Intelligence} + @{Knowledge} + 2]]' name='roll_KnowledgeExpertiseCheck'></button><br/>
+</fieldset>
+    </div>
+</div>
 <hr/>
 <div class='3colrow'>
 <div class='col'>
