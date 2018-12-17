@@ -1,7 +1,7 @@
-input[type=text]{
-  width: 60%;
+input[type=text]
+{
+    width: 60%;
 }
-
 
 select{
   width: 60%;
@@ -76,31 +76,6 @@ input.sheet-tab2 + span::before
 {
     /*left: 180px;*/
 	left: 213px;
-    
-    background: #fff;
-    background: -moz-linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
-    background: -webkit-linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
-    background: -ms-linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
-    background: -o-linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
-}
-
-input.sheet-tab3 + span::before
-{
-    /*left: 180px;*/
-	left: 364px;
-    
-    background: #fff;
-    background: -moz-linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
-    background: -webkit-linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
-    background: -ms-linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
-    background: -o-linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
-}
-
-input.sheet-tab4 + span::before
-{
-    /*left: 180px;*/
-	left: 515px;
-    
     background: #fff;
     background: -moz-linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
     background: -webkit-linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
@@ -123,11 +98,8 @@ input.sheet-tab4 + span::before
 div.sheet-tab-content { display: none; }
 
 input.sheet-tab1:checked ~ div.sheet-tab1,
-input.sheet-tab2:checked ~ div.sheet-tab2,
-input.sheet-tab3:checked ~ div.sheet-tab3,
-input.sheet-tab4:checked ~ div.sheet-tab4
+input.sheet-tab2:checked ~ div.sheet-tab2
 
 {
     display: block;
 }
-
