@@ -350,7 +350,7 @@ on("change:repeating_NPCWounds:NPC_Damage_Taken remove:repeating_NPCWounds", fun
     <fieldset class="repeating_NPCWeapons">
     <strong style="display:inline-block;  width:60px;">Weapon</strong><input type='text' name='attr_NPC_WeaponName'><br/>
     <strong style="display:inline-block;  width:60px;">Damage</strong><input type='number' name='attr_NPC_WeaponNoDie' value='1'><strong>D</strong><input type='number' name='attr_NPC_WeaponDieType' value='6'><strong>+</strong><input type='number' name='attr_NPC_WeaponDamageModifier' value='0'>
-    <button type='roll' value='@{First_Name} rolls @{WeaponName} damage [[@{NPC_WeaponNoDie}d@{NPC_WeaponDieType} + @{NPC_WeaponDamageModifier} +@{NPC_Body}]]' name='roll_NPC_DamageRoll'></button><br/>
+    <button type='roll' value='@{NPC_Name} rolls @{NPC_WeaponName} damage [[@{NPC_WeaponNoDie}d@{NPC_WeaponDieType} + @{NPC_WeaponDamageModifier} +@{NPC_Body}]]' name='roll_NPC_DamageRoll'></button><br/>
     <strong style="display:inline-block;  width:60px;">Tags</strong><input type='text' name='attr_NPC_WeaponTags'><br/>
 </fieldset>
 </div>
