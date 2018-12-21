@@ -83,6 +83,17 @@ input.sheet-tab2 + span::before
     background: -o-linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
 }
 
+input.sheet-tab:checked + span::before
+{
+    background: #fff;
+    background: -moz-linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
+    background: -webkit-linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
+    background: -ms-linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
+    background: -o-linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
+    background: linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
+    border-bottom-color: #fff;
+}
+
 .sheet-background::after {
     content: "";
     top: 0;
