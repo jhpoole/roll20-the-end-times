@@ -1,6 +1,6 @@
 <div class="container">
 <div class="background">
-<input type="radio" name="attr_tab1" class="sheet-tab sheet-tab1" value="1" title="CHARACTER" checked="checked" /><span title="CHARACTER"></span>
+<input type="radio" name="attr_tab1" class="sheet-tab sheet-tab1" value="1" title="PC" checked="checked" /><span title="PC"></span>
 <input type="radio" name="attr_tab1" class="sheet-tab sheet-tab2" value="2" title="NPC" /><span title="NPC"></span>
 
 <div class="sheet-tab-content sheet-tab1">
@@ -38,7 +38,7 @@
 
 </div>
 <div class='col'>
-	<img src="https://raw.githubusercontent.com/jhpoole/roll20-the-end-times/master/theendtimestitle.png">
+    <img src="https://raw.githubusercontent.com/jhpoole/roll20-the-end-times/master/theendtimestitle.png">
 </div>
 <div class='col'>
     <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -111,7 +111,7 @@
 <strong style="display:inline-block;  width:95px;">Wound Thresh.</strong><input type="number" name="attr_Wound_Threshold" value="floor(abs(@{Health_Max})/2)" title="Health / 2 (Rounded Down)" disabled/><br/>
 <strong style="display:inline-block;  width:95px;">Movement</strong><input type="number" name="attr_Movement" value="6+(floor((@{Speed}+@{Coordination})/2))" title="6 + (SPEED + COORDINATION / 2 (Rounded Down))"disabled/><br/>
 <strong style="display:inline-block;  width:95px;">Reaction</strong><input type="number" name="attr_Reaction" value="@{Speed}+@{Intelligence}" title="SPEED + INTELLIGENCE"disabled/><button type='roll' value='@{First_Name} rolls Reaction: [[1d20 + @{Reaction}]]' name='roll_ReactionCheck'></button><br/>
-<strong style="display:inline-block;  width:95px;">Defence</strong><input type="number" name="attr_Armed_Defence" value="10+@{Speed}+(floor(@{Skirmish}/2))" title = "10 + SPEED + (Skirmish / 2 (Rounded Down))"disabled/><br/>
+<strong style="display:inline-block;  width:95px;">Defence</strong><input type="number" name="attr_Defence" value="10+@{Speed}+(floor(@{Skirmish}/2))" title = "10 + SPEED + (Skirmish / 2 (Rounded Down))"disabled/><br/>
 </div>
 <div class='col'>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -271,9 +271,96 @@ on("change:repeating_Wounds:Damage_Taken remove:repeating_Wounds", function() {
 </div>
 <hr/>
 </div> <!-- End of Character Section -->
-<div class="sheet-tab-content sheet-tab4">
+<div class="sheet-tab-content sheet-tab2">
+<strong style="display:inline-block;  width:90px;">Name</strong>
+<input type="text" name="attr_NPC_Name"  value=""><br/><br/>
+<div class='3colrow'>
 
+<div class='col'>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>ATTRIBUTES</strong><br/>
+    <br/>
+<strong style="display:inline-block;  width:90px;">Body</strong>
+<input type="number" name="attr_NPC_Body"  value="0"  class="sheet-input-attribute" style="display:inline;"><br/>
+<strong style="display:inline-block;  width:90px;">Speed</strong>
+<input type="number" name="attr_NPC_Speed"  value="0"  class="sheet-input-attribute" style="display:inline;"><br/>
+<strong style="display:inline-block;  width:90px;">Coordination</strong>
+<input type="number" name="attr_NPC_Coordination"  value="0"  class="sheet-input-attribute" style="display:inline;"><br/>
+<strong style="display:inline-block;  width:90px;">Intelligence</strong>
+<input type="number" name="attr_NPC_Intelligence"  value="0"  class="sheet-input-attribute" style="display:inline;"><br/>
+<strong style="display:inline-block;  width:90px;">Willpower</strong>
+<input type="number" name="attr_NPC_Willpower" value="0"  class="sheet-input-attribute" style="display:inline;"><br/>
+<strong style="display:inline-block;  width:90px;">Charisma</strong>
+<input type="number" name="attr_NPC_Charisma" value="0"  class="sheet-input-attribute" style="display:inline;"><br/>
+</div>
+<div class='col'>
+    &nbsp;
+    <strong>CALCULATED ATTRIBUTES</strong><br/>
+    <br/>
+<strong style="display:inline-block;  width:91px;">Health</strong>
+<input type="number" name="attr_NPC_Health_Current" value="@{NPC_Health_Max} - @{NPC_Current_Damage}" disabled/>/<input type="number" name="attr_NPC_Health_Max" value="0"/><br/>
+<input type="number" hidden name="attr_NPC_Current_Damage">
+<strong style="display:inline-block;  width:95px;">Unconscious</strong><input type="number" name="attr_NPC_Unconscious" value="0"/><br/>
+<strong style="display:inline-block;  width:95px;">Wound Thresh.</strong><input type="number" name="attr_NPC_Wound_Threshold" value="0"/><br/>
+<strong style="display:inline-block;  width:95px;">Movement</strong><input type="number" name="attr_NPC_Movement" value="0"/><br/>
+<strong style="display:inline-block;  width:95px;">Reaction</strong><input type="number" name="attr_NPC_Reaction" value="0"/><button type='roll' value='@{NPC_Name} rolls Reaction: [[1d20 + @{NPC_Reaction}]]' name='roll_NPC_ReactionCheck'></button><br/>
+<strong style="display:inline-block;  width:95px;">Defence</strong><input type="number" name="attr_NPC_Defence" value="0"/><br/>
+<strong style="display:inline-block;  width:95px;">Armour</strong><input type="number" name="attr_NPC_Armour" value="0"/><br/>
+</div>
+<div class='col'>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>WOUNDS</strong><br/>
+    <br/>
+<fieldset class="repeating_NPCWounds"> 
+<strong style="display:inline-block;  width:60px;">Damage</strong><input type="number" name="attr_NPC_Damage_Taken" value="0" min="0" class="sheet-input-wound"><strong>&nbsp;Crit?&nbsp;</strong><input type='checkbox' name='attr_NPC_WoundCrit'/><br/><strong style="display:inline-block;  width:60px;">Injury</strong><input type='text' name='attr_NPC_WoundCritInjury'/><br/><br/>
+<script type="text/worker">
+on("change:repeating_NPCWounds:NPC_Damage_Taken remove:repeating_NPCWounds", function() {
+	getSectionIDs("repeating_NPCWounds", function(IDArray) {
+		var fieldNames = [];
+        for (var i=0; i < IDArray.length; i++) {
+			fieldNames.push("repeating_NPCWounds_" + IDArray[i] + "_NPC_Damage_Taken");
+		}
+		
+        var total = 0;
+        getAttrs(fieldNames, function(values) {
+			for (var i=0; i < IDArray.length; i++) {
+				total += parseInt(values["repeating_NPCWounds_" + IDArray[i] + "_NPC_Damage_Taken"])||0;
+			}
+			setAttrs({
+				"NPC_Current_Damage": total
+			});
+        });
+	});
+});
+</script>
+</fieldset>
+</div>
+</div>
+<br/>
+<div class='3colrow'>
 
+<div class='col'>
+    <strong>SKILLS</strong><br/>
+    <fieldset class="repeating_NPCSkills">
+    <input type='text' name='attr_NPC_Skill_Name'/><input type='number' name='attr_NPC_Skill_Value'/><br/>
+    </fieldset>  
+</div>
+<div class='col'>
+    <strong>WEAPONS</strong><br/>
+    <fieldset class="repeating_NPCWeapons">
+    <strong style="display:inline-block;  width:60px;">Weapon</strong><input type='text' name='attr_NPC_WeaponName'><br/>
+    <strong style="display:inline-block;  width:60px;">Damage</strong><input type='number' name='attr_NPC_WeaponNoDie' value='1'><strong>D</strong><input type='number' name='attr_NPC_WeaponDieType' value='6'><strong>+</strong><input type='number' name='attr_NPC_WeaponDamageModifier' value='0'>
+    <button type='roll' value='@{First_Name} rolls @{WeaponName} damage [[@{NPC_WeaponNoDie}d@{NPC_WeaponDieType} + @{NPC_WeaponDamageModifier} +@{NPC_Body}]]' name='roll_NPC_DamageRoll'></button><br/>
+    <strong style="display:inline-block;  width:60px;">Tags</strong><input type='text' name='attr_NPC_WeaponTags'><br/>
+</fieldset>
+</div>
+<div class='col'>
+        <strong>EQUIPMENT</strong><br/>
+<fieldset class="repeating_Equipment">
+    <input type='text' name='attr_EquipmentName'><br/>
+</fieldset>
+</div>
+</div>
 
 
 </div> <!-- End of NPC Section -->
