@@ -3,6 +3,11 @@ input[type=text]
     width: 60%;
 }
 
+textarea {
+  resize: vertical;
+  min-height:100px;
+}
+
 select{
   width: 60%;
 }
