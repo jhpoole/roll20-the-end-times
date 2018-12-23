@@ -17,7 +17,9 @@
 <option value="1">Human</option> 
 <option value="2">Dwarf</option> 
 <option value="3">Orc</option> 
-<option value="4">Elf</option> </select><br/>
+<option value="4">Elf</option> 
+<option value="5">Half-Orc</option> 
+<option value="6">Half-Elf</option> </select><br/>
 <strong style="display:inline-block;  width:90px;">Birthplace</strong>
 <select name="attr_Birthplace">
 <option value="1">Human Country</option> 
@@ -31,10 +33,12 @@
 <option value="3">Wealthy</option> </select><br/>
 <strong style="display:inline-block;  width:94px;">Proffesion</strong><input type="text" name="attr_Proffesion"  value=""><br/>
 <strong style="display:inline-block;  width:94px;">Age</strong><input type="number" name="attr_Age"  value="0"><br/>
-<input hidden type="number" name="attr_Human_Boolean"  value="floor(@{Race}/1)*floor(1/@{Race})" disabled><br/>
-<input hidden type="number" name="attr_Dwarf_Boolean"  value="floor(@{Race}/2)*floor(2/@{Race})" disabled><br/>
-<input hidden type="number" name="attr_Orc_Boolean"  value="floor(@{Race}/3)*floor(3/@{Race})" disabled><br/>
-<input hidden type="number" name="attr_Elf_Boolean"  value="floor(@{Race}/4)*floor(4/@{Race})" disabled><br/>
+<input hidden type="number" name="attr_Human_Boolean"  value="floor(@{Race}/1)*floor(1/@{Race})" disabled>
+<input hidden type="number" name="attr_Dwarf_Boolean"  value="floor(@{Race}/2)*floor(2/@{Race})" disabled>
+<input hidden type="number" name="attr_Orc_Boolean"  value="floor(@{Race}/3)*floor(3/@{Race})" disabled>
+<input hidden type="number" name="attr_Elf_Boolean"  value="floor(@{Race}/4)*floor(4/@{Race})" disabled>
+<input hidden type="number" name="attr_HalfOrc_Boolean"  value="floor(@{Race}/5)*floor(5/@{Race})" disabled>
+<input hidden type="number" name="attr_HalfElf_Boolean"  value="floor(@{Race}/6)*floor(6/@{Race})" disabled>
 
 </div>
 <div class='col'>
@@ -270,6 +274,9 @@ on("change:repeating_Wounds:Damage_Taken remove:repeating_Wounds", function() {
 
 </div>
 <hr/>
+<strong>NOTES</strong><br/>
+<textarea rows="4" cols="50"></textarea>
+<hr/>
 </div> <!-- End of Character Section -->
 <div class="sheet-tab-content sheet-tab2">
 <strong style="display:inline-block;  width:90px;">Name</strong>
@@ -342,7 +349,20 @@ on("change:repeating_NPCWounds:NPC_Damage_Taken remove:repeating_NPCWounds", fun
 <div class='col'>
     <strong>SKILLS</strong><br/>
     <fieldset class="repeating_NPCSkills">
-    <input type='text' name='attr_NPC_Skill_Name'/><input type='number' name='attr_NPC_Skill_Value'/><br/>
+    <input type='text' name='attr_NPC_Skill_Name'/><input type='number' name='attr_NPC_Skill_Value'/><button type='roll' value='@{NPC_Name} rolls @{NPC_Skill_Name} [[d20 + @{NPC_Skill_Value} + (@{NPC_Body} * @{NPC_Skill_Body_Boolean}) + (@{NPC_Speed} * @{NPC_Skill_Speed_Boolean}) + (@{NPC_Coordination} * @{NPC_Skill_Coordination_Boolean}) + (@{NPC_Intelligence} * @{NPC_Skill_Intelligence_Boolean}) + (@{NPC_Willpower} * @{NPC_Skill_Willpower_Boolean}) + (@{NPC_Charisma} * @{NPC_Skill_Charisma_Boolean})]]' name='roll_NPCSkillCheck'></button><br/>
+    <strong>Attribute </strong><select name="attr_NPC_Attribute">
+    <option value="1">Body</option> 
+    <option value="2">Speed</option> 
+    <option value="3">Coordination</option> 
+    <option value="4">Intelligence</option> 
+    <option value="5">Willpower</option> 
+    <option value="6">Charisma</option> </select><br/>
+    <input hidden type="number" name="attr_NPC_Skill_Body_Boolean"  value="floor(@{NPC_Attribute}/1)*floor(1/@{NPC_Attribute})" disabled>
+    <input hidden type="number" name="attr_NPC_Skill_Speed_Boolean"  value="floor(@{NPC_Attribute}/2)*floor(2/@{NPC_Attribute})" disabled>
+    <input hidden type="number" name="attr_NPC_Skill_Coordination_Boolean"  value="floor(@{NPC_Attribute}/3)*floor(3/@{NPC_Attribute})" disabled>
+    <input hidden type="number" name="attr_NPC_Skill_Intelligence_Boolean"  value="floor(@{NPC_Attribute}/4)*floor(4/@{NPC_Attribute})" disabled>
+    <input hidden type="number" name="attr_NPC_Skill_Willpower_Boolean"  value="floor(@{NPC_Attribute}/5)*floor(5/@{NPC_Attribute})" disabled>
+    <input hidden type="number" name="attr_NPC_Skill_Charisma_Boolean"  value="floor(@{NPC_Attribute}/6)*floor(6/@{NPC_Attribute})" disabled>
     </fieldset>  
 </div>
 <div class='col'>
